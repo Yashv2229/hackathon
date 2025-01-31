@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
-import { ClerkProvider, SignedIn, SignedOut, RedirectToSignIn } from '@clerk/clerk-react'
+import { ClerkProvider, SignedIn, SignedOut, RedirectToSignIn, UserButton } from '@clerk/clerk-react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import SignInPage from './pages/sign-in'
@@ -30,6 +30,7 @@ function App() {
             <>
               <SignedIn>
                 <div>
+                  <UserButton />
                   <a href="https://vite.dev" target="_blank">
                     <img src={viteLogo} className="logo" alt="Vite logo" />
                   </a>
@@ -42,14 +43,7 @@ function App() {
                   <button onClick={() => setCount((count) => count + 1)}>
                     count is {count}
                   </button>
-                  <p>
-                    Edit <code>src/App.jsx</code> and save to test HMR
-                  </p>
                 </div>
-                <p className="read-the-docs">
-                  Click on the Vite and React logos to learn more
-                </p>
-                <ProtectedPage />
               </SignedIn>
               <SignedOut>
                 <RedirectToSignIn />
@@ -62,4 +56,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
