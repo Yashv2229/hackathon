@@ -28,9 +28,13 @@ function App() {
           path="/"
           element={
             <>
+              <div className="user-button-container">
+                <SignedIn>
+                  <UserButton />
+                </SignedIn>
+              </div>
               <SignedIn>
                 <div>
-                  <UserButton />
                   <a href="https://vite.dev" target="_blank">
                     <img src={viteLogo} className="logo" alt="Vite logo" />
                   </a>
