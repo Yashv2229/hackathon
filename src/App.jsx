@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-import { SignIn, SignUp } from "@clerk/clerk-react";
-import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
+//import { SignIn, SignUp } from "@clerk/clerk-react";
+//import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SignedIn, SignedOut, RedirectToSignIn, useAuth } from "@clerk/clerk-react";
 
