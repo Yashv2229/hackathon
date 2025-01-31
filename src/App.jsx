@@ -1,8 +1,5 @@
-import { useState } from 'react'
-import { Routes, Route, useNavigate } from 'react-router-dom'
-import { ClerkProvider, SignedIn, SignedOut, RedirectToSignIn, UserButton } from '@clerk/clerk-react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Routes, Route } from 'react-router-dom'
+import { SignedIn, SignedOut, RedirectToSignIn, UserButton } from '@clerk/clerk-react'
 import SignInPage from './pages/sign-in'
 import SignUpPage from './pages/sign-up'
 import './App.css'
@@ -17,8 +14,6 @@ function ProtectedPage() {
 }
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <Routes>
@@ -28,21 +23,14 @@ function App() {
           path="/"
           element={
             <>
-              <SignedIn>
-                <div>
+              <div className="user-button-container">
+                <SignedIn>
                   <UserButton />
-                  <a href="https://vite.dev" target="_blank">
-                    <img src={viteLogo} className="logo" alt="Vite logo" />
-                  </a>
-                  <a href="https://react.dev" target="_blank">
-                    <img src={reactLogo} className="logo react" alt="React logo" />
-                  </a>
-                </div>
-                <h1>Vite + React</h1>
-                <div className="card">
-                  <button onClick={() => setCount((count) => count + 1)}>
-                    count is {count}
-                  </button>
+                </SignedIn>
+              </div>
+              <SignedIn>
+                <div className="main-content">
+                  <h1>Welcome to Your App</h1>
                 </div>
               </SignedIn>
               <SignedOut>
